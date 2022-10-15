@@ -1,0 +1,30 @@
+.main {
+  text-align: center;
+}
+
+.buttons {
+ display: flex;
+ justify-content: center;
+ 
+}
+
+.button-decrease {
+  width: 40px;
+  font-size: 30px;
+  font-weight: 900;
+  height: 40px;
+  color: white;
+  background-color: red;
+  border: none;
+}
+
+.button-increase {
+  width: 40px;
+  font-size: 25px;
+  font-weight: 900;
+  height: 40px;
+  color: white;
+  background-color: green;
+  margin-left: 4px;
+  border: none;
+}
