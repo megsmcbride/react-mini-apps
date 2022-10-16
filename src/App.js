@@ -1,41 +1,23 @@
-import './App.css';
-import { useState, useEffect } from 'react'
-import axios from 'axios';
+import "./App.css";
+import { Routes, Route, NavLink } from "react-router-dom";
+import Calculator from "./components/Calculator";
+import Counter from "./components/Counter";
 
 function App() {
-  const [ counter, setCounter ] = useState(0)
-  const [ randomUserData, setRandomUserData ] = useState()
-  const [ userName, setUserName ] = useState("")
-  
- 
-
-
-  useEffect(() => {
-    axios.get(`https://randomuser.me/api`)
-    .then((res) => {
-      setRandomUserData(res.data.results)
-      setUserName(res.data.results[0].name.first + " " + res.data.results[0].name.last)
-      console.log("----", res.data.results[0])
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-
-  }, [])
-
-
   return (
-    <div className="main">
-      <h1>Counter</h1>
-      <h3> {counter} </h3>
-      <div className='buttons'>
+    <div className="App">
+      <h1>Welcome</h1>
+      <NavLink to="/calculator">
+        <span>Calculator</span>
+      </NavLink>
+      <NavLink to="/">
+        <span>Counter</span>
+      </NavLink>
 
-      <button className="button-decrease" onClick={() => setCounter(counter - 1)}>-</button>
-      <button className='button-increase' onClick={() => setCounter(counter + 1)}>+</button>
-      </div>
-    {userName}
-      
-
+      <Routes>
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/" element={<Counter />} />
+      </Routes>
     </div>
   );
 }
