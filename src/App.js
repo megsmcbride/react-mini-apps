@@ -1,9 +1,22 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios';
 
 function App() {
   const [ counter, setCounter ] = useState(0)
+  const [ randomUserData, setRandomUserData ] = useState()
 
+
+  useEffect(() => {
+    axios.get(`https://randomuser.me/api`)
+    .then((res) => {
+      setRandomUserData(JSON.stringify(res.data))
+  
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }, [])
 
 
   return (
@@ -15,6 +28,8 @@ function App() {
       <button className="button-decrease" onClick={() => setCounter(counter - 1)}>-</button>
       <button className='button-increase' onClick={() => setCounter(counter + 1)}>+</button>
       </div>
+
+      {randomUserData}
       
 
     </div>
