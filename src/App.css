@@ -9,22 +9,25 @@
 }
 
 .button-decrease {
-  width: 40px;
+  width: 60px;
   font-size: 30px;
   font-weight: 900;
   height: 40px;
   color: white;
   background-color: red;
   border: none;
+  border-radius: 5px;
 }
 
 .button-increase {
-  width: 40px;
+  width: 60px;
   font-size: 25px;
   font-weight: 900;
   height: 40px;
   color: white;
   background-color: green;
-  margin-left: 4px;
+  margin-left: 15px;
   border: none;
+  border-radius: 5px;
+
 }

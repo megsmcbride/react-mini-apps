@@ -5,17 +5,22 @@ import axios from 'axios';
 function App() {
   const [ counter, setCounter ] = useState(0)
   const [ randomUserData, setRandomUserData ] = useState()
+  const [ userName, setUserName ] = useState("")
+  
+ 
 
 
   useEffect(() => {
     axios.get(`https://randomuser.me/api`)
     .then((res) => {
-      setRandomUserData(JSON.stringify(res.data))
-  
+      setRandomUserData(res.data.results)
+      setUserName(res.data.results[0].name.first + " " + res.data.results[0].name.last)
+      console.log("----", res.data.results[0])
     })
     .catch((err) => {
       console.log(err)
     })
+
   }, [])
 
 
@@ -28,8 +33,7 @@ function App() {
       <button className="button-decrease" onClick={() => setCounter(counter - 1)}>-</button>
       <button className='button-increase' onClick={() => setCounter(counter + 1)}>+</button>
       </div>
-
-      {randomUserData}
+    {userName}
       
 
     </div>
