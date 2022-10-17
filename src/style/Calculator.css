@@ -1,0 +1,17 @@
+.calculator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.calculator-body {
+  width: 120px;
+  height: 180px;
+  border: 1px solid black;
+}
+
+.display {
+  border: 1px solid black;
+  height: 20px;
+  width: auto;
+  margin: 5px px;
+}

@@ -1,33 +1,21 @@
-.main {
+.App {
   text-align: center;
 }
 
-.buttons {
- display: flex;
- justify-content: center;
- 
-}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
-.button-decrease {
-  width: 60px;
-  font-size: 30px;
-  font-weight: 900;
-  height: 40px;
-  color: white;
-  background-color: red;
-  border: none;
-  border-radius: 5px;
 }
-
-.button-increase {
-  width: 60px;
-  font-size: 25px;
-  font-weight: 900;
-  height: 40px;
+.nav-button {
   color: white;
-  background-color: green;
-  margin-left: 15px;
-  border: none;
-  border-radius: 5px;
+ width: 130px;
+ height: 30px;
+border-radius: 10px;
+font-size: 15px;
+font-weight: 900;
+border: none;
+background-color: black;
 
 }
